@@ -26,11 +26,20 @@ body {
 }
 
 .dodaj {
-	background-color: rgba(0, 0, 0, 0.08);
+	background-color: rgba(0, 0, 0, 0.06);
 	padding: 20px 20px;
 	float: left;
 	width: 100%;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
+	-webkit-transition: background-color 100ms ease-in-out;
+	-moz-transition: background-color 100ms ease-in-out;
+	-ms-transition: background-color 100ms ease-in-out;
+	-o-transition: background-color 100ms ease-in-out;
+	transition: background-color 100ms ease-in-out;
+	cursor: pointer;
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.09);
+	}
 	h3 {
 		margin: 0 0 5px;
 		text-transform: capitalize;
@@ -49,6 +58,10 @@ body {
 	th {
 		background-color: #f7f7f7 !important;
 	}
+	.predmet {
+		text-transform: uppercase !important;
+		font-weight: bold;
+	}
 }
 
 
@@ -57,4 +70,15 @@ body {
 	z-index: 99999;
 	top: 9.5%;
 	right: 3%;
+}
+
+ul.uporabniki {
+	padding: 0;
+	li {
+		width: 100%;
+		float: left;
+		list-style: none;
+		margin-bottom: 10px;
+		font-weight: bold;
+	}
 }

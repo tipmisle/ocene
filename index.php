@@ -38,7 +38,7 @@
 
 			
 				echo '<tr>
-			            <td>' . $imepredmeta. '</td>';
+			            <td class="predmet">' . $imepredmeta. '</td>';
 			    echo '<td>';
  $ocene = mysqli_query($con, "SELECT * FROM ocene WHERE predmet='". $imepredmeta ."' AND uporabnik_id='". $uporabnik['id'] . "'");
 				while ($ocena = mysqli_fetch_assoc($ocene)) {
