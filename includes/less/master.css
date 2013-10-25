@@ -1,0 +1,102 @@
+body {
+  background-color: #f4f4f4;
+  font-family: 'Open Sans' !important;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Open Sans' !important;
+}
+.table {
+  background-color: #fff !important;
+}
+.table h4 {
+  font-size: 20px;
+  margin: 5px 0 0 0;
+}
+.table tr th {
+  background-color: #f8f8f8;
+}
+section {
+  float: left;
+  width: 100%;
+}
+section div {
+  float: left;
+}
+.ocene .dodaj {
+  float: left;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 20px;
+  text-align: center;
+  -webkit-transition: background-color 100ms ease-in-out;
+  -moz-transition: background-color 100ms ease-in-out;
+  -ms-transition: background-color 100ms ease-in-out;
+  -o-transition: background-color 100ms ease-in-out;
+  transition: background-color 100ms ease-in-out;
+}
+.ocene .dodaj:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ocene .dodaj button {
+}
+.ocene .dodaj label {
+}
+.ocene .dosedanje h4 {
+  margin: 0;
+}
+.ocene .dosedanje ul {
+  padding: 0;
+  margin: 0;
+}
+.ocene .dosedanje ul li {
+  float: left;
+  list-style: none;
+  margin-right: 5px;
+}
+.changelog li {
+  margin-bottom: 20px;
+  float: left;
+  width: 100%;
+}
+.changelog li small {
+  font-weight: 800;
+}
+.changelog li ul li {
+  margin-bottom: 0;
+  list-style: none !important;
+}
+.povprecje h3,
+.povprecje h4 {
+  font-weight: 800;
+}
+footer {
+  margin-top: 50px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+footer p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+}
+.povp {
+  opacity: 0.7;
+  -webkit-transition: opacity 100ms linear;
+  -moz-transition: opacity 100ms linear;
+  -ms-transition: opacity 100ms linear;
+  -o-transition: opacity 100ms linear;
+  transition: opacity 100ms linear;
+  cursor: pointer;
+}
+.povp:hover {
+  opacity: 1;
+}
