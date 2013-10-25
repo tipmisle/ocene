@@ -7,8 +7,9 @@
 	if (isset($_GET['predmet'])) {
 		$predmet = $_GET['predmet'];
 		$ocena = $_GET['ocena'];
-		$sql = mysqli_query($con, "INSERT INTO ocene (ocena, predmet) VALUES ('$_GET[ocena]', '$_GET[predmet]')");
-		echo "dodano";
+		$sql = mysqli_query($con, "INSERT INTO ocene (ocena, predmet, uporabnik_id) VALUES ('$_GET[ocena]', '$_GET[predmet]', '$_GET[uporabnik]')");
+		echo "<h3>Ocena dodana</h3>";
+		header("Location: index.php");
 	} else {
 		echo "ni dodano";
 	}

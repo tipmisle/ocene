@@ -6,10 +6,15 @@
 		<?php 
 
 		$result = mysqli_query($con, "SELECT * FROM uporabniki");
-		while ($row = mysqli_fetch_assoc($result)) {
+		while ($uporabnik = mysqli_fetch_assoc($result)) {
 			$predmeti = ['slo', 'mat', 'nubp', 'vos', 'npa', 'msa', 'soc', 'anj', 'oos', 'fiz', 'sap', 'npap'];
 			echo '<div class="col-lg-6 dodaj-oceno">';
-			echo $row['ime_priimek'];
+			echo '<div class="o-uporabniku col-lg-12">';
+			echo '<div class="col-lg-1">';
+			echo '<img class="pull-left" src="' . $uporabnik['slika'] . '">';
+			echo '</div>';
+			echo '<div class="col-lg-11 col-md-8 ime"><h2>' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] .'</h2></div>';
+			echo '</div>';
 			foreach($predmeti as $imepredmeta) {
 				echo '<div class="dodaj">';
 			 echo '
@@ -33,18 +38,18 @@
 					  </label>
 					</div>
 					<input type="hidden" name="predmet" value="'. $imepredmeta .'">
-					<input type="hidden" name="uporabnik" value="1">
+					<input type="hidden" name="uporabnik" value="' . $uporabnik['id'] . '">
 					<button type="submit" class="btn btn-primary">Dodaj</button>
 			 	</form>
 			 ';
 			 echo '<div class="pull-left col-lg-3 dosedanje">';
 			 echo "<b>Dosedanje ocene</b>";
-			 $ocene = mysqli_query($con, "SELECT * FROM ocene WHERE predmet='". $imepredmeta ."'");
-				while ($row = mysqli_fetch_assoc($ocene)) {
-					echo "<ul>";
-					echo "<li>" . $row['ocena'] . "</li>";
-					echo "</ul>";
+			 echo "<ul>";
+			 $ocene = mysqli_query($con, "SELECT * FROM ocene WHERE predmet='". $imepredmeta ."' AND uporabnik_id='". $uporabnik['id'] . "'");
+				while ($ocena = mysqli_fetch_assoc($ocene)) {
+					echo "<li>" . $ocena['ocena'] . ", </li>";
 				}
+			echo "</ul>";
 
 			 echo "</div>";
 			 echo "</div>";

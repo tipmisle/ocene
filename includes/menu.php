@@ -13,8 +13,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">Ocene</a></li>
+        <li><a href="index.php">Ocene</a></li>
         <li><a href="#">Povprečje</a></li>
+        <li><a href="dodaj-oceno.php" style="padding: 7px 0 0 0;"><div class="btn btn-primary">Dodaj</div></a></li>
       </ul>
     </div>
   </div>
