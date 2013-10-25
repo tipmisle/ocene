@@ -39,7 +39,8 @@
 					</div>
 					<input type="hidden" name="predmet" value="'. $imepredmeta .'">
 					<input type="hidden" name="uporabnik" value="' . $uporabnik['id'] . '">
-					<button type="submit" class="btn btn-primary">Dodaj</button>
+					<input type="hidden" name="date" value="">
+					<button type="submit" class="btn btn-default">Dodaj</button>
 			 	</form>
 			 ';
 			 echo '<div class="pull-left col-lg-3 dosedanje">';
