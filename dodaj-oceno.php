@@ -11,7 +11,7 @@
 			echo '<div class="col-lg-6 dodaj-oceno">';
 			echo '<div class="o-uporabniku col-lg-12">';
 			echo '<div class="col-lg-1">';
-			echo '<img class="pull-left" src="' . $uporabnik['slika'] . '">';
+			echo '<img width="100%" class="pull-left" src="' . $uporabnik['slika'] . '">';
 			echo '</div>';
 			echo '<div class="col-lg-11 col-md-8 ime"><h2>' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] .'</h2></div>';
 			echo '</div>';

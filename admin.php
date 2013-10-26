@@ -12,9 +12,9 @@
 			$query = "INSERT INTO uporabniki (ime_priimek, spol, razred, slika)";
 			$query .= " VALUES ('". $ime_priimek ."','". $spol ."','". $razred ."','". $slika ."')";
 			$sql = mysqli_query($con, $query) OR die("ERROR");
-			echo '<div class="alert alert-success uspesno-dodana animated fadeOut">Uporabnik uspešno dodan!</div>';
+			echo '<div class="alert alert-success uspesno-dodana animated ">Uporabnik uspešno dodan!</div>';
 		} else {
-			echo '<div class="alert alert-warning uspesno-dodana animated fadeOut">Uporabnik ni bil dodan!</div>';
+			echo '<div class="alert alert-warning uspesno-dodana animated ">Uporabnik ni bil dodan!</div>';
 		}
 
 		echo '
@@ -52,8 +52,8 @@
 		$result = mysqli_query($con, "SELECT * FROM uporabniki");
 		while ($uporabnik = mysqli_fetch_assoc($result)) {
 			echo '<li clas="col-lg-12">';
-			echo '<div class="col-lg-2"><img src="' . $uporabnik['slika'] . '"></div>';
-			echo '<div class="col-lg-10">'. $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] . '<a href="uredi_uporabnika.php?id=' . $uporabnik['id'] . '"><div class="btn btn-primary btn-xs pull-right">Uredi</div></a></div>';
+			echo '<div class="col-lg-2 col-md-1 col-sm-1 col-xs-1"><img width="100%" src="' . $uporabnik['slika'] . '"></div>';
+			echo '<div class="col-lg-10 col-md-11 col-sm-11 col-xs-11">'. $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] . '<a href="uredi_uporabnika.php?id=' . $uporabnik['id'] . '"><div class="btn btn-primary btn-xs pull-right">Uredi</div></a></div>';
 			echo '</li>';
 		}
 
@@ -74,3 +74,11 @@
 
 <?php include 'includes/footer.php'; ?>
 
+ <script  type="text/javascript">
+$( document ).ready(function() {
+	$(".alert").addClass("fadeIn").delay(2500).queue(function(next){
+	    $(this).addClass("fadeOut");
+	    next();
+	});
+});
+ </script>

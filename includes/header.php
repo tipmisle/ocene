@@ -7,6 +7,7 @@
 	<script src="./js/less.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" href="./css/animate.min.css">
+	<link rel="stylesheet" href="./css/nprogress.css">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
