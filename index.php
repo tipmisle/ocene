@@ -24,7 +24,7 @@
 			echo '<div class="col-lg-11 col-md-11 ime"><h2><a href="profil.php?id=' . $uporabnik['id'] . '">' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] .'</a></h2></div>';
 			echo '</div>';
 			echo '
-				<table class="table table-bordered table-condensed table-hover">
+				<table class="table table-bordered table-hover">
 				        <thead>
 				          <tr>
 				            <th>' . $uporabnik['ime_priimek'] . '</th>

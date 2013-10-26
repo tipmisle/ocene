@@ -8,17 +8,37 @@
         $id = $_GET['id'];
         $sql = mysqli_query($con, "SELECT * FROM uporabniki WHERE id='$id'");
         $uporabnik = mysqli_fetch_array($sql);
+            $result = mysqli_query($con, "SELECT * FROM ocene WHERE uporabnik_id='$id'");
+            $num_rows = mysqli_num_rows($result);
+                $enka = mysqli_query($con, "SELECT * FROM ocene WHERE uporabnik_id='$id' AND  ocena=1");
+                $negativne = mysqli_num_rows($enka);
 
         echo '
             <div class="col-lg-8">
                 <div class="panel panel-default">
                   <div class="panel-body">
+                        <div class="no pull-right">
+                          <h3 class="text-muted" style="margin: -5px 0 0 0">#' . $uporabnik['id'] .'</h3>
+                        </div>
                         <div class="col-lg-3 no-padding"><img width="100%" src="' . $uporabnik['slika'] . '"></div>
-                        <div class="col-lg-9">
+                        <div class="col-lg-9" style="margin: -20px 0 0 0;">
                             <p><b>Ime</b>: &nbsp;' . $uporabnik['ime_priimek'] . '</p>
                             <p><b>Sol</b>: &nbsp;' . $uporabnik['spol'] . '</p>
                             <p><b>Razred</b>: &nbsp;' . $uporabnik['razred'] . '</p>
-                        </div>
+                            <p><b>Število vseh ocen</b>: &nbsp;' . $num_rows . '</p>
+                            <p><b>Število negativnih ocen</b>: &nbsp;';
+                            if ($negativne==0) {
+                              echo $negativne .", <b>bravo!</b>";
+                            } elseif ($negativne>=1) {
+                              echo $negativne;
+                            }
+                            echo '</p>';
+                              $resulte = mysqli_query($con, "SELECT ROUND(AVG(ocena), 1) as `povprecje` FROM ocene WHERE uporabnik_id='". $uporabnik['id'] ."'");
+                                while ($ocena = mysqli_fetch_assoc($resulte)) {
+                                  echo '<p><b>Celoletno povprečje</b>: ' . $ocena['povprecje'] .'</p>';
+                                }
+
+                        echo '</div>
                   </div>
                 </div>
             </div>
