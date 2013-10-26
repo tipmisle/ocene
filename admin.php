@@ -53,7 +53,7 @@
 		while ($uporabnik = mysqli_fetch_assoc($result)) {
 			echo '<li clas="col-lg-12">';
 			echo '<div class="col-lg-2 col-md-1 col-sm-1 col-xs-1"><img width="100%" src="' . $uporabnik['slika'] . '"></div>';
-			echo '<div class="col-lg-10 col-md-11 col-sm-11 col-xs-11">'. $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] . '<a href="uredi_uporabnika.php?id=' . $uporabnik['id'] . '"><div class="btn btn-primary btn-xs pull-right">Uredi</div></a></div>';
+			echo '<div class="col-lg-10 col-md-11 col-sm-11 col-xs-11"><a href="profil.php?id=' . $uporabnik['id'] . '">' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] . '</a><a href="uredi_uporabnika.php?id=' . $uporabnik['id'] . '"><div class="btn btn-primary btn-xs pull-right">Uredi</div></a></div>';
 			echo '</li>';
 		}
 

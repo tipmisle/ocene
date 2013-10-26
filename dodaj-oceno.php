@@ -3,11 +3,15 @@
 
 <div class="container main">
 	<div class="row">
+			<div class="page-header">
+			  <h1>Dodaj <small>oceno</small></h1>
+			</div>
+
 		<?php 
 
 		$result = mysqli_query($con, "SELECT * FROM uporabniki");
 		while ($uporabnik = mysqli_fetch_assoc($result)) {
-			$predmeti = ['slo', 'mat', 'nubp', 'vos', 'npa', 'msa', 'soc', 'anj', 'oos', 'fiz', 'sap', 'npap'];
+			$predmeti = [$predmet1, $predmet2, $predmet3, $predmet4, $predmet5, $predmet6, $predmet7, $predmet8, $predmet9, $predmet10, $predmet11, $predmet12];
 			echo '<div class="col-lg-6 dodaj-oceno">';
 			echo '<div class="o-uporabniku col-lg-12">';
 			echo '<div class="col-lg-1">';

@@ -1,0 +1,3 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule profil/(.*)/(.*)/$ /profil.php?$1=$2
