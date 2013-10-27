@@ -15,8 +15,11 @@
       <ul class="nav navbar-nav">
         <li><a href="index.php">Ocene</a></li>
         <li><a href="povprecje.php">Povprečje</a></li>
-        <li><a href="dodaj-oceno.php" style="padding: 7px 0 0 0;"><div class="btn btn-primary">Dodaj</div></a></li>
+        <li><a href="changelog.php">Changelog</a></li>
       </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="dodaj-oceno.php" style="padding: 7px 0 0 0;"><div class="btn btn-primary">Dodaj oceno</div></a></li>
+        </ul>
     </div>
   </div>
 </nav>

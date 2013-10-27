@@ -1,8 +1,6 @@
  <?php include 'includes/header.php'; ?>
 
 
-<div class="container main">
-	<div class="row">
 			<div class="page-header">
 			  <h1>Dodaj <small>oceno</small></h1>
 			</div>
@@ -14,10 +12,10 @@
 			$predmeti = [$predmet1, $predmet2, $predmet3, $predmet4, $predmet5, $predmet6, $predmet7, $predmet8, $predmet9, $predmet10, $predmet11, $predmet12];
 			echo '<div class="col-lg-6 dodaj-oceno">';
 			echo '<div class="o-uporabniku col-lg-12">';
-			echo '<div class="col-lg-1">';
-			echo '<img width="100%" class="pull-left" src="' . $uporabnik['slika'] . '">';
+			echo '<div class="col-lg-1 slika">';
+			echo '<img class="pull-left" src="' . $uporabnik['slika'] . '">';
 			echo '</div>';
-			echo '<div class="col-lg-11 col-md-8 ime"><h2>' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] .'</h2></div>';
+			echo '<div class="col-lg-11 col-md-11 ime"><h2><a href="profil.php?id=' . $uporabnik['id'] . '">' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] .'</a></h2></div>';
 			echo '</div>';
 			foreach($predmeti as $imepredmeta) {
 				echo '<div class="dodaj">';
@@ -62,7 +60,6 @@
 			echo '</div>';
 		}
 		 ?>
-	</div>
-</div>
+
 
 <?php include 'includes/footer.php'; ?>

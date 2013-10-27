@@ -1,4 +1,10 @@
-
+	</div>
+</div>
+<footer id="footer">
+	<div class="container">
+		<p>Copyrights by Miha Vidakovič.</p>
+	</div>
+</footer>
 <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
 <script src="./js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src='./js/nprogress.js'></script>
@@ -13,5 +19,13 @@ $(document).ready(function(){
 });
 
 	</script>
+ <script  type="text/javascript">
+$( document ).ready(function() {
+	$(".alert").addClass("fadeIn").delay(2500).queue(function(next){
+	    $(this).addClass("fadeOut");
+	    next();
+	});
+});
+ </script>
 </body>
 </html>

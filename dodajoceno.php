@@ -1,8 +1,6 @@
 <?php include 'includes/header.php'; ?>
 
 
-<div class="container main">
-	<div class="row">
 <?php 
 	if (isset($_GET['predmet'])) {
 		$predmet = $_GET['predmet'];
@@ -15,7 +13,5 @@
 	}
  ?>
 
-	</div>
-</div>
 
  <?php include 'includes/footer.php'; ?>

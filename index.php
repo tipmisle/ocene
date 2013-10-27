@@ -9,8 +9,7 @@
 
  ?>
 
-<div class="container main">
-	<div class="row">
+
 		<?php 
 
 		$result = mysqli_query($con, "SELECT * FROM uporabniki");
@@ -18,8 +17,8 @@
 			$predmeti = [$predmet1, $predmet2, $predmet3, $predmet4, $predmet5, $predmet6, $predmet7, $predmet8, $predmet9, $predmet10, $predmet11, $predmet12];
 			echo '<div class="col-lg-6">';
 			echo '<div class="o-uporabniku col-lg-12">';
-			echo '<div class="col-lg-1">';
-			echo '<img width="100%" class="pull-left" src="' . $uporabnik['slika'] . '">';
+			echo '<div class="col-lg-1 slika">';
+			echo '<img class="pull-left" src="' . $uporabnik['slika'] . '">';
 			echo '</div>';
 			echo '<div class="col-lg-11 col-md-11 ime"><h2><a href="profil.php?id=' . $uporabnik['id'] . '">' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] .'</a></h2></div>';
 			echo '</div>';
@@ -62,15 +61,5 @@
 		}
 		 ?>
 
-	</div>
-</div>
 
 <?php include 'includes/footer.php'; ?>
- <script  type="text/javascript">
-$( document ).ready(function() {
-	$(".alert").addClass("fadeIn").delay(2500).queue(function(next){
-	    $(this).addClass("fadeOut");
-	    next();
-	});
-});
- </script>

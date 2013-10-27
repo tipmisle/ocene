@@ -1,7 +1,6 @@
 <?php include 'includes/header.php'; ?>
 
-<div class="container main">
-	<div class="row">
+
 <?php 
             if (isset($_POST['submit'])) {
             $ime_priimek = $_POST['ime_priimek'];
@@ -53,7 +52,5 @@
     }
 
  ?>
-	</div>
-</div>
 
 <?php include 'includes/footer.php'; ?>

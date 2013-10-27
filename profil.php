@@ -1,10 +1,34 @@
 <?php include 'includes/header.php'; ?>
 
-<div class="container main">
-	<div class="row">
+
 <?php 
 
     if (isset($_GET['id'])) {
+      if (isset($_GET['dodan']) && $_GET['dodan']=="true") {
+        echo '<div class="alert alert-success uspesno-dodana animated ">Komentar uspešno dodan, brez razburjanja!</div>';
+      } else {
+      }
+          echo '
+              <div class="col-lg-4 pull-right">
+      <div class="panel panel-default">
+        <div class="panel-heading">Uporabniki</div>
+        <div class="panel-body">
+        <ul class="uporabniki">';
+    $result = mysqli_query($con, "SELECT * FROM uporabniki");
+    while ($uporabnik = mysqli_fetch_assoc($result)) {
+      echo '<li clas="col-lg-12">';
+      echo '<div class="col-lg-2 col-md-1 col-sm-1 col-xs-1"><img src="' . $uporabnik['slika'] . '"></div>';
+      echo '<div class="col-lg-10 col-md-11 col-sm-11 col-xs-11"><a href="profil.php?id=' . $uporabnik['id'] . '">' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] . '</a></div>';
+      echo '</li>';
+    }
+
+       echo '</ul>
+        </div>
+      </div>
+    </div>
+
+    ';
+
         $id = $_GET['id'];
         $sql = mysqli_query($con, "SELECT * FROM uporabniki WHERE id='$id'");
         $uporabnik = mysqli_fetch_array($sql);
@@ -23,14 +47,13 @@
                         <div class="col-lg-3 no-padding"><img width="100%" src="' . $uporabnik['slika'] . '"></div>
                         <div class="col-lg-9" style="margin: -20px 0 0 0;">
                             <p><b>Ime</b>: &nbsp;' . $uporabnik['ime_priimek'] . '</p>
-                            <p><b>Sol</b>: &nbsp;' . $uporabnik['spol'] . '</p>
+                            <p><b>Spol</b>: &nbsp;' . $uporabnik['spol'] . '</p>
                             <p><b>Razred</b>: &nbsp;' . $uporabnik['razred'] . '</p>
-                            <p><b>Število vseh ocen</b>: &nbsp;' . $num_rows . '</p>
-                            <p><b>Število negativnih ocen</b>: &nbsp;';
+                            <p><b>Število vseh ocen</b>: &nbsp;' . $num_rows . '</p>';
                             if ($negativne==0) {
-                              echo $negativne .", <b>bravo!</b>";
+                              echo '<p><b>Število negativnih ocen: </b>' . $negativne .', <b>bravo!</b></p>';
                             } elseif ($negativne>=1) {
-                              echo $negativne;
+                              echo '<p class="text-danger"><b>Število negativnih ocen: </b>' . $negativne . '</p>';
                             }
                             echo '</p>';
                               $resulte = mysqli_query($con, "SELECT ROUND(AVG(ocena), 1) as `povprecje` FROM ocene WHERE uporabnik_id='". $uporabnik['id'] ."'");
@@ -38,31 +61,12 @@
                                   echo '<p><b>Celoletno povprečje</b>: ' . $ocena['povprecje'] .'</p>';
                                 }
 
-                        echo '</div>
+                        echo '
+                        </div>
                   </div>
                 </div>
             </div>
         ';
-          echo '
-              <div class="col-lg-4">
-      <div class="panel panel-default">
-        <div class="panel-heading">Uporabniki</div>
-        <div class="panel-body">
-        <ul class="uporabniki">';
-    $result = mysqli_query($con, "SELECT * FROM uporabniki");
-    while ($uporabnik = mysqli_fetch_assoc($result)) {
-      echo '<li clas="col-lg-12">';
-      echo '<div class="col-lg-2 col-md-1 col-sm-1 col-xs-1"><img width="100%" src="' . $uporabnik['slika'] . '"></div>';
-      echo '<div class="col-lg-10 col-md-11 col-sm-11 col-xs-11"><a href="profil.php?id=' . $uporabnik['id'] . '">' . $uporabnik['ime_priimek'] . ', ' . $uporabnik['razred'] . '</a></div>';
-      echo '</li>';
-    }
-
-       echo '</ul>
-        </div>
-      </div>
-    </div>
-
-    ';
         echo '
         <div class="col-lg-8">
           <div class="panel panel-default">
@@ -82,7 +86,12 @@
 
         <div class="col-lg-8">
           <div class="panel panel-default">
-          <div class="panel-heading">Vsi komentarji</div>
+          <div class="panel-heading">Vsi komentarji (';
+              $resulti = mysqli_query($con, "SELECT vsebina, COUNT(id) FROM komentarji WHERE uporabnikid='" . $_GET['id'] . "'");
+              while ($komentarji = mysqli_fetch_assoc($resulti)) {
+                echo $komentarji['COUNT(id)'];
+              } 
+            echo ')</div>
             <div class="panel-body">
               ';
               $query = mysqli_query($con, "SELECT * FROM komentarji WHERE  uporabnikid='" . $_GET['id'] . "' ORDER BY datum");
@@ -107,12 +116,11 @@
           </div>
         </div>
           ';
+
     } else {
         echo "non";
     }
 
  ?>
-	</div>
-</div>
 
 <?php include 'includes/footer.php'; ?>

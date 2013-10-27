@@ -12,3 +12,5 @@
 </head>
 <body>
 <?php include 'menu.php'; ?>
+<div id="wrap" class="container main">
+	<div class="row">

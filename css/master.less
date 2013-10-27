@@ -1,11 +1,20 @@
-body {
+html {
 	font-family: 'Open Sans' !important;
+    height: 100%;
 }
 
+body {
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.03) !important;
+}
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
   font-family: 'Open Sans' !important;
  }
+
+.navbar {
+	background-color: #fff !important;
+}
 
 .o-uporabniku {
 	padding: 10px 0 20px;
@@ -13,6 +22,12 @@ body {
 	width: 100%;
 	.col-lg-1 {
 		padding-left: 0;
+	}
+	.slika {
+		height: 40px;
+		img {
+			max-height: 40px;
+		}
 	}
 	.ime {
 		h2 {
@@ -49,9 +64,18 @@ body {
 		margin: 0 0 5px;
 		text-transform: capitalize;
 	}
+	.slika {
+		height: 40px;
+		img {
+			max-height: 40px;
+		}
+	}
 	.dosedanje {
 		margin: 0;
 		padding: 0;
+		position: relative;
+		height: 50px;
+		max-height: 50px;
 		li {
 			list-style: none;
 			float: left;
@@ -60,8 +84,9 @@ body {
 }
 
 .table {
+	background-color: #fff;
 	th {
-		background-color: #f7f7f7 !important;
+		background-color: #f3f3f3 !important;
 	}
 	.predmet {
 		text-transform: uppercase !important;
@@ -71,7 +96,7 @@ body {
 
 
 .uspesno-dodana {
-	position: absolute;
+	position: fixed;
 	z-index: 99999;
 	top: 9.5%;
 	right: 3%;
@@ -85,11 +110,16 @@ ul.uporabniki {
 		list-style: none;
 		margin-bottom: 10px;
 		font-weight: bold;
+		height: 40px;
+		img {
+			max-height: 40px;
+			width: 100%;
+		}
 	}
 }
 
 .no-padding {
-	margin-left: 0 !important;
+	padding-left: 0 !important;
 }
 
 .komentar {
@@ -103,5 +133,44 @@ ul.uporabniki {
 	}
 	&:last-of-type {
 		border-bottom: 0;
+	}
+}
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 60px 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  .container {
+  	p {
+  		text-align: center;
+  		padding: 23px 0 0;
+  		margin: 0;
+  		font-size: 12px;
+  		color: rgba(0, 0, 0, 0.5);
+  	}
+  }
+}
+
+.changelog {
+	padding: 0;
+	li {
+		list-style: none;
+		margin-bottom: 25px;
+		ul {
+			li {
+				list-style: disc;
+				margin-bottom: 5px;
+			}
+		}
 	}
 }
